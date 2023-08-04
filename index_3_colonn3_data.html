@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tabella con Somma Automatica e Filtraggio per Data</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Testo</th>
+                <th>Numero</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <!-- Qui verranno inserite le righe dinamicamente -->
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Totale Somma:</th>
+                <th colspan="2" id="total-sum">0</th>
+            </tr>
+        </tfoot>
+    </table>
+    <button onclick="aggiungiRiga()">Aggiungi riga</button>
+
+    <div>
+        <label for="filter-date">Filtra per data:</label>
+        <input type="date" id="filter-date" onchange="filtraPerData()" />
+    </div>
+
+    <script>
+        function calcolaSommaTotale() {
+            const numeri = document.querySelectorAll("#table-body input.numero");
+            let totalSum = 0;
+
+            numeri.forEach(numero => {
+                const value = parseFloat(numero.value);
+                if (!isNaN(value)) {
+                    totalSum += value;
+                }
+            });
+
+            document.getElementById("total-sum").textContent = totalSum;
+        }
+
+        function calcolaSommaPerData(dataFiltraggio) {
+            const numeri = document.querySelectorAll("#table-body input.numero");
+            let totalSum = 0;
+
+            numeri.forEach(numero => {
+                const riga = numero.closest("tr");
+                const dataCell = riga.querySelector("td:first-child");
+                const data = dataCell.querySelector("input").value;
+
+                if (data <= dataFiltraggio) {
+                    const value = parseFloat(numero.value);
+                    if (!isNaN(value)) {
+                        totalSum += value;
+                    }
+                }
+            });
+
+            document.getElementById("total-sum").textContent = totalSum;
+        }
+
+        // Funzione per filtrare i dati per data
+        function filtraPerData() {
+            const filterDate = document.getElementById("filter-date").value;
+            calcolaSommaPerData(filterDate);
+        }
+
+        // Funzione per aggiungere una nuova riga alla tabella
+        function aggiungiRiga() {
+            const tableBody = document.getElementById("table-body");
+
+            const row = document.createElement("tr");
+            const dataCell = document.createElement("td");
+            const testoCell = document.createElement("td");
+            const numeroCell = document.createElement("td");
+
+            const dataInput = document.createElement("input");
+            dataInput.type = "date";
+
+            const testoInput = document.createElement("input");
+            testoInput.type = "text";
+
+            const numeroInput = document.createElement("input");
+            numeroInput.type = "number";
+            numeroInput.classList.add("numero");
+            numeroInput.addEventListener("input", calcolaSommaTotale);
+
+            dataCell.appendChild(dataInput);
+            testoCell.appendChild(testoInput);
+            numeroCell.appendChild(numeroInput);
+
+            row.appendChild(dataCell);
+            row.appendChild(testoCell);
+            row.appendChild(numeroCell);
+            tableBody.appendChild(row);
+
+            calcolaSommaTotale(); // Aggiorna la somma totale
+        }
+    </script>
+</body>
+
+</html>
