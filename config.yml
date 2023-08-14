@@ -1,0 +1,16 @@
+backend:
+  name: github
+  repo: clarakk/Somma-spese-copia
+
+media_folder: "static/images"
+public_folder: "/images"
+
+collections:
+  - name: "expenses"
+    label: "Expenses"
+    folder: "content/expenses"
+    create: true
+    fields:
+      - { name: "date", label: "Date", widget: "date" }
+      - { name: "text", label: "Text", widget: "string" }
+      - { name: "number", label: "Number", widget: "number" }
