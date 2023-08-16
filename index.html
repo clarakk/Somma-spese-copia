@@ -50,6 +50,17 @@
     <div><input type="submit" value="INVIA"></div> -->
      <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+    <script>
         function calcolaSommaTotale() {
             const numeri = document.querySelectorAll("#table-body input.numero");
             let totalSum = 0;
