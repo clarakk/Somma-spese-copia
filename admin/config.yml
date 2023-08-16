@@ -1,7 +1,7 @@
 backend:
 name: git-gateway
-  branch: main
-  repo: github.com/clarakk/Somma-spese-copia
+branch: main
+repo: github.com/clarakk/Somma-spese-copia
   
 media_folder: "static/images"
 public_folder: "/images"
