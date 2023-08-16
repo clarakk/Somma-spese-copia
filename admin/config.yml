@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: clarakk/tabella2
+  repo: github.com/clarakk/Somma-spese-copia
 
 media_folder: "static/images"
 public_folder: "/images"
