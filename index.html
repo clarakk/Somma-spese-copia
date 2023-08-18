@@ -1,8 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
 <head>
-    <title>Tabella con Salvataggio dei Dati</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Manager</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/netlify-cms@^1.0.0/dist/cms.css" />
+
 </head>
 
 <body>
@@ -48,18 +52,7 @@
         <input type="checkbox">Accetta condizioni
     </div>
     <div><input type="submit" value="INVIA"></div> -->
-     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
+    <script src="https://unpkg.com/netlify-cms@^1.0.0/dist/cms.js"></script>
     <script>
         function calcolaSommaTotale() {
             const numeri = document.querySelectorAll("#table-body input.numero");
