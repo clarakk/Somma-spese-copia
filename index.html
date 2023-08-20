@@ -1,8 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
 <head>
-    <title>Tabella con Salvataggio dei Dati</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Manager</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/netlify-cms@^1.0.0/dist/cms.css" />
+
 </head>
 
 <body>
@@ -10,13 +14,12 @@
         <thead>
             <tr>
                 <th>Data</th>
-                <th>Testo</th>
+                <th>Luogo</th>
                 <th>Numero</th>
             </tr>
         </thead>
         <tbody id="table-body">
-            <!-- Qui verranno inserite le righe dinamicamente -->
-        </tbody>
+                  </tbody>
         <tfoot>
             <tr>
                 <th>Totale Somma:</th>
@@ -48,6 +51,7 @@
         <input type="checkbox">Accetta condizioni
     </div>
     <div><input type="submit" value="INVIA"></div> -->
+    <script src="https://unpkg.com/netlify-cms@^1.0.0/dist/cms.js"></script>
     <script>
         function calcolaSommaTotale() {
             const numeri = document.querySelectorAll("#table-body input.numero");
@@ -184,6 +188,7 @@
             caricamentoIniziale(); // Carica i dati salvati all'avvio
         });
     </script>
+  <script src="https://unpkg.com/netlify-cms@^1.0.0/dist/cms.js"></script>
 </body>
 
 </html>
