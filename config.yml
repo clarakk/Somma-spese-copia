@@ -1,8 +1,7 @@
 backend:
   name: github
-
   repo: clarakk/Somma-spese-copia
-  branch: master
+  branch: main
   site_domain: tabellagit.netlify.app
   
 media_folder: "static/images"
