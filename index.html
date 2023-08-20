@@ -28,29 +28,33 @@
         </tfoot>
     </table>
     <button onclick="aggiungiRiga()">Aggiungi riga</button>
-
+<br>
     <div>
         <label for="filter-date">Filtra per data:</label>
         <input type="date" id="filter-date" onchange="filtraPerData()" />
     </div>
-    <br>
-<!-- <form action="postdovenonso" method="post">
-    <div><label for="Nome">Il tuo nome </label><input type="text" Nome="Nome" placeholder="inserisci il tuo nome">
-    </div>
-    <div><label for="Cognome"> Scrivi il tuo cognome <input type="text" Nome="Cognome"
-                placeholder="inserisci il tuo cognome"></label></div>
-    <div><label for="email">scrivi la tua email </label><input type="email" placeholder="email"></div>
-    <div><label for="spesa">importo spese </label><input type="number" placeholder="spesa"></div>
-    <div><label for="regione">La tua regione <select name="regione">
-                <option value="Veneto">Veneto</option>
-                <option value="Lazio">Lazio</option>
-                <option value="Campania">Campania</option>
-            </select></div>
-    <div>Età 0 - 18 <input type="radio"> Età > 18 <input type="radio"></div>
-    <div>
-        <input type="checkbox">Accetta condizioni
-    </div>
-    <div><input type="submit" value="INVIA"></div> -->
+    <br><br>
+<form name="contact" method="POST" data-netlify="true">
+    <p>
+        <label>Your Name: <input type="text" name="name" /></label>
+    </p>
+    <p>
+        <label>Your Email: <input type="email" name="email" /></label>
+    </p>
+    <p>
+        <label>Your Role: <select name="role[]" multiple>
+                <option value="leader">Leader</option>
+                <option value="follower">Follower</option>
+            </select></label>
+    </p>
+    <p>
+        <label>Message: <textarea name="message"></textarea></label>
+    </p>
+    <p>
+        <button type="submit">Send</button>
+    </p>
+</form>
+
     <script src="https://unpkg.com/netlify-cms@^1.0.0/dist/cms.js"></script>
     <script>
         function calcolaSommaTotale() {
