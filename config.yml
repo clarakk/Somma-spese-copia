@@ -1,6 +1,5 @@
 backend:
   name: github
-
   repo: clarakk/Somma-spese-copia
   branch: master
   site_domain: tabellagit.netlify.app
