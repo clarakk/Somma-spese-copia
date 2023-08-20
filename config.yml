@@ -9,7 +9,6 @@ media_folder: "static/images"
 public_folder: "/images"
 
 collections:
-<<<<<<< HEAD
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
     folder: "_posts/" # The path to the folder where the documents are stored
@@ -20,13 +19,3 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
-=======
-  - name: "expenses"
-    label: "Expenses"
-    folder: "content/expenses"
-    create: true
-    fields:
-      - { name: "date", label: "Date", widget: "date" }
-      - { name: "text", label: "Text", widget: "string" }
-      - { name: "number", label: "Number", widget: "number" }
->>>>>>> 48ebb5fd10d5cc4e497490892daad91ec8cac79f
